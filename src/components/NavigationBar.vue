@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar">
       <div class="navbar-brand">
-        <img class="logo" src="../assets/coxyburger.png">
+        <img class="logo" src="../assets/coxyburger.png" @click.prevent="scrollToSection('home')">
         <router-link
          to="/"
          class="navbar-item"

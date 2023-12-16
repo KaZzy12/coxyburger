@@ -3,6 +3,7 @@
   <HelloWorld msg="Welcome to Your Vue.js App" class="content"/>
   <Burgers/>
   <Carte/>
+  <Contact/>
 </template>
 
 <script>
@@ -10,6 +11,7 @@ import HelloWorld from './components/HelloWorld.vue';
 import NavigationBar from './components/NavigationBar.vue';
 import Burgers from './components/Burgers.vue';
 import Carte from './components/Carte.vue';
+import Contact from './components/Contact.vue';
 
 export default {
   name: 'App',
@@ -18,6 +20,7 @@ export default {
     NavigationBar,
     Burgers,
     Carte,
+    Contact,
   },
   methods: {
     scrollToSection(sectionId) {
