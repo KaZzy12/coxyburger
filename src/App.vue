@@ -1,4 +1,5 @@
 <template>
+  <TopBar/>
   <NavigationBar/>
   <HelloWorld msg="Welcome to Your Vue.js App" class="content"/>
   <Burgers/>
@@ -8,6 +9,7 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
+import TopBar from './components/TopBar.vue';
 import NavigationBar from './components/NavigationBar.vue';
 import Burgers from './components/Burgers.vue';
 import Carte from './components/Carte.vue';
@@ -17,10 +19,20 @@ export default {
   name: 'App',
   components: {
     HelloWorld,
+    TopBar,
     NavigationBar,
     Burgers,
     Carte,
     Contact,
+  },
+  data() {
+    return {
+      isScrolledDown: false,
+      prevScrollX: 0,
+    };
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     scrollToSection(sectionId) {
@@ -29,6 +41,22 @@ export default {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
+    },
+    handleScroll() {
+      const currentScrollX = window.scrollX;
+      const currentScrollY = window.scrollY;
+
+      // Check if scrolling vertically or horizontally
+      if (currentScrollX !== this.prevScrollX) {
+        // Scrolling horizontally, hide the top bar
+        this.isScrolledDown = false;
+      } else {
+        // Scrolling vertically
+        this.isScrolledDown = currentScrollY > 0;
+      }
+
+      // Update the previous scroll position
+      this.prevScrollX = currentScrollX;
     },
   },
 };
