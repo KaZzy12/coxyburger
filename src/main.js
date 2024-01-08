@@ -1,4 +1,11 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import router from './router';
+import currencyFilter from './shared/currency-filter';
 
-createApp(App).mount('#app');
+const app = createApp(App);
+app.config.globalProperties.$filters = {
+  currency: currencyFilter,
+};
+app.use(router)
+  .mount('#app');

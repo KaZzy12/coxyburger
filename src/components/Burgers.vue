@@ -3,10 +3,10 @@
       <h2>Burgers</h2>
       <div class="burger-container">
         <!-- Loop through the burgers array and display them -->
-        <div v-for="burger in burgers" :key="burger.id" class="burger-item">
+        <div v-for="burger in listBurgers" :key="burger.id" class="burger-item">
           <!-- Burger content goes here -->
           <div class="burger-content">
-            <img :src="require(`../assets/burgers/${burger.image}`)" alt="Burger Image">
+            <img :src="burger.image" alt="Burger Image">
             <div class="burger-details">
               <h3>{{ burger.name }}</h3>
               <p>{{ burger.description }}</p>
@@ -18,39 +18,14 @@
   </template>
 
 <script>
+import { burgers } from '../burgers/burgers';
+
+const listBurgers = burgers;
+
 export default {
   data() {
     return {
-      burgers: [
-        {
-          id: 1,
-          name: 'Combi',
-          image: 'combiburger.png',
-          description: 'Combi quali',
-          isVege: false,
-        },
-        {
-          id: 2,
-          name: 'Karmann',
-          image: 'karmannburger.png',
-          description: 'Karmann quali',
-          isVege: false,
-        },
-        {
-          id: 3,
-          name: 'Cotchia',
-          image: 'cotchia.png',
-          description: 'Cotchia quali',
-          isVege: true,
-        },
-        {
-          id: 4,
-          name: 'Coxy',
-          image: 'coxyburger.png',
-          description: 'Coxy quali',
-          isVege: false,
-        },
-      ],
+      listBurgers,
     };
   },
 };
