@@ -1,7 +1,9 @@
 <template>
-    <div v-for="(brochette, idx) in brochettes" :key="idx">
-        <h4>{{ brochette.name }} | {{ $filters.currency(brochette.price) }}</h4>
-    </div>
+  <ul>
+    <li v-for="(brochette, idx) in brochettes" :key="idx">
+      <h4>{{ brochette.name }} | {{ $filters.currency(brochette.price) }}</h4>
+    </li>
+  </ul>
 </template>
 
 <script>

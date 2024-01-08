@@ -1,24 +1,30 @@
 <template>
     <nav class="navbar">
       <div class="navbar-brand">
-        <img class="logo" src="../assets/coxyburger.png" @click.prevent="scrollToSection('home')">
         <router-link
-         to="/"
-         class="navbar-item"
-         @click.prevent="scrollToSection('home')">
+         :to="{name: 'Home'}"
+         class="navbar-item">
+         <img class="logo" src="../assets/coxyburger.png">
          Coxyburger
         </router-link>
       </div>
       <div class="navbar-menu">
         <ul class="menu-list">
-            <li v-for="menuItem in menuItems" :key="menuItem.id">
-                <router-link
-                 :to="`/${menuItem.route}`"
-                 class="navbar-item"
-                 @click.prevent="scrollToSection(menuItem.route)">
-                 {{ menuItem.name }}
-                </router-link>
-            </li>
+          <li>
+            <router-link class="navbar-item" :to="{name: 'Burgers'}" exact>
+              Burgers
+            </router-link>
+          </li>
+          <li>
+            <router-link class="navbar-item" :to="{name: 'Carte'}" exact>
+              Carte
+            </router-link>
+          </li>
+          <li>
+            <router-link class="navbar-item" :to="{name: 'Contact'}" exact>
+              Contact
+            </router-link>
+          </li>
         </ul>
       </div>
     </nav>
@@ -26,15 +32,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      menuItems: [
-        { id: 1, name: 'Burgers', route: 'burgers' },
-        { id: 2, name: 'Carte', route: 'carte' },
-        { id: 3, name: 'Contact', route: 'contact' },
-      ],
-    };
-  },
   methods: {
     scrollToSection(sectionId) {
       const element = document.getElementById(sectionId);
@@ -47,7 +44,6 @@ export default {
 </script>
 <style scoped>
 .navbar {
-  position: fixed;
   width: 97.5%;
   background: linear-gradient(180deg, #234b90 80%, #ffffff 81%, #922028 15%);
   padding: 0.7rem 1rem;

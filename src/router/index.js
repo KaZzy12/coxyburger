@@ -3,7 +3,10 @@ import {
   createWebHistory,
 } from 'vue-router';
 
+import Burgers from '../components/Burgers.vue';
 import Carte from '../components/Carte.vue';
+import Contact from '../components/Contact.vue';
+import Home from '../components/Home.vue';
 import MenuAlcools from '../components/menu/MenuAlcools.vue';
 import MenuBrochettes from '../components/menu/MenuBrochettes.vue';
 import MenuFrites from '../components/menu/MenuFrites.vue';
@@ -18,6 +21,16 @@ import MenuVegetarien from '../components/menu/MenuVegetarien.vue';
 export default createRouter({
   history: createWebHistory(),
   routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: Home,
+    },
+    {
+      path: '/burgers',
+      name: 'Burgers',
+      component: Burgers,
+    },
     {
       path: '/carte',
       name: 'Carte',
@@ -74,6 +87,11 @@ export default createRouter({
           component: MenuVegetarien,
         },
       ],
+    },
+    {
+      path: '/contact',
+      name: 'Contact',
+      component: Contact,
     },
   ],
 });

@@ -10,9 +10,18 @@
             <p>0489/18.45.70</p>
         </div>
         <div>
-            <form>
-                <button :formaction='locationUrl'>Itinéraire</button>
-            </form>
+            <a href="https://maps.app.goo.gl/aLX5KuAphy4vmi5M8">
+              <img class="social" src="../assets/maps.png">
+            </a>
+            <a href="https://www.facebook.com/coxyburger">
+              <img class="social" src="../assets/facebook.png">
+            </a>
+            <a href="https://www.m.me/100013961950313">
+              <img class="social" src="../assets/messenger.png">
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=32489184570">
+              <img class="social" src="../assets/whatsapp.png">
+            </a>
         </div>
         <div class="socials-container">
         </div>
@@ -28,3 +37,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.social {
+  width: 50px;
+}
+</style>

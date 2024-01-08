@@ -26,12 +26,12 @@ export const vegetarienMenu = [
   },
   {
     id: 6,
-    name: 'Mitraillette végé',
+    name: 'Mitraillette',
     price: 10,
   },
   {
     id: 7,
-    name: 'Hamburger végé',
+    name: 'Hamburger',
     price: 8.5,
   },
 ];

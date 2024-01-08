@@ -1,7 +1,9 @@
 <template>
-    <div v-for="(sauce, idx) in sauces" :key="idx">
-        <h4>{{ sauce.name }} | {{ $filters.currency(sauce.price) }}</h4>
-    </div>
+  <ul class="entry-list">
+    <li class="item" v-for="(sauce, idx) in sauces" :key="idx">
+      <h4>{{ sauce.name }} | {{ $filters.currency(sauce.price) }}</h4>
+    </li>
+  </ul>
 </template>
 
 <script>

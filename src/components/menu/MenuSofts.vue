@@ -1,7 +1,9 @@
 <template>
-    <div v-for="(soft, idx) in softs" :key="idx">
-        <h4>{{ soft.name }} | {{ $filters.currency(soft.price) }}</h4>
-    </div>
+  <ul>
+    <li v-for="(soft, idx) in softs" :key="idx">
+      <h4>{{ soft.name }} | {{ $filters.currency(soft.price) }}</h4>
+    </li>
+  </ul>
 </template>
 
 <script>

@@ -4,52 +4,52 @@
         <div>
             <ul class="menu">
                 <li>
-                    <router-link :to="{name: 'BrowseFrites'}">
+                    <router-link class="nav-link" :to="{name: 'BrowseFrites'}">
                         Frites
                     </router-link>
                 </li>
                 <li>
-                    <router-link :to="{name: 'BrowseHamburgers'}">
+                    <router-link class="nav-link" :to="{name: 'BrowseHamburgers'}">
                         Hamburgers
                     </router-link>
                 </li>
                 <li>
-                    <router-link :to="{name: 'Browsemitraillettes'}">
+                    <router-link class="nav-link" :to="{name: 'Browsemitraillettes'}">
                         Mitraillettes
                     </router-link>
                 </li>
                 <li>
-                    <router-link :to="{name: 'BrowseBrochettes'}">
+                    <router-link class="nav-link" :to="{name: 'BrowseBrochettes'}">
                         Brochettes
                     </router-link>
                 </li>
                 <li>
-                    <router-link :to="{name: 'BrowseSnacks'}">
+                    <router-link class="nav-link" :to="{name: 'BrowseSnacks'}">
                         Snacks
                     </router-link>
                 </li>
                 <li>
-                    <router-link :to="{name: 'BrowsePetiteRestauration'}">
+                    <router-link class="nav-link" :to="{name: 'BrowsePetiteRestauration'}">
                         Petite restauration
                     </router-link>
                 </li>
                 <li>
-                    <router-link :to="{name: 'BrowseSauces'}">
+                    <router-link class="nav-link" :to="{name: 'BrowseSauces'}">
                         Sauces
                     </router-link>
                 </li>
                 <li>
-                    <router-link :to="{name: 'BrowseVegetarien'}">
+                    <router-link class="nav-link" :to="{name: 'BrowseVegetarien'}">
                         Végétarien
                     </router-link>
                 </li>
                 <li>
-                    <router-link :to="{name: 'BrowseSofts'}">
+                    <router-link class="nav-link" :to="{name: 'BrowseSofts'}">
                         Softs
                     </router-link>
                 </li>
                 <li>
-                    <router-link :to="{name: 'BrowseAlcools'}">
+                    <router-link class="nav-link" :to="{name: 'BrowseAlcools'}">
                         Bières/Vin
                     </router-link>
                 </li>
@@ -74,5 +74,12 @@ export default {
 }
 ul {
   list-style-type: none;
+}
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+.router-link-active {
+  color: red;
 }
 </style>
